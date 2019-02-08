@@ -1,0 +1,4 @@
+
+<select (change)= 'onChange($event)'>
+  <option *ngFor="let sector of sectors" [value]='sector.value'>{{sector.sector}}</option> 
+</select>

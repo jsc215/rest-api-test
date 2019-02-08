@@ -1,0 +1,16 @@
+<div class='container'>
+  <ul class='list-group'>
+    <div *ngFor='let user of users'>
+      <li class='list-group-item h4'>User: {{user.firstName}}
+        <p class='mb-0 h5'>Stocks</p>
+        <div *ngFor="let stock of user['stock']">
+          <ul>
+            <li class='h6'>{{stock.Company}} (Ticker: {{stock.Ticker}})
+              <!-- Sector: {{stock.Sector}} Ticker: {{stock.Ticker}}  -->
+            </li>
+          </ul>
+        </div>
+      </li>
+    </div>
+  </ul>
+</div>

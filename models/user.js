@@ -8,7 +8,8 @@ const UserSchema = new mongoose.Schema({
 const StockSchema = new mongoose.Schema({});
 
 let User = mongoose.model('User', UserSchema);
-module.exports = { User };
 
 let Stock = mongoose.model('Stock', StockSchema);
 // module.exports = { Stock };
+
+module.exports = { User, Stock };

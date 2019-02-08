@@ -1,0 +1,10 @@
+.stock {
+  /* display: flex; */
+  height: 600px;
+  overflow-y: scroll;
+  /* flex-direction: column; */
+  background-color: lavender;
+  padding: 10px;
+  border-radius: 10px;
+}
+

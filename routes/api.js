@@ -1,15 +1,21 @@
 const express = require('express');
 const router = express.Router();
 // const { ObjectID } = require('mongodb');
-const { User } = require('../models/user');
-// const { Stock } = require('../models/user');
+const { User, Stock } = require('../models/user');
 
 router.get('/users', async (req, res) => {
   const users = await User.find()
-    .populate('stock', 'Country Ticker Sector -_id')
+    .populate('stock', 'Company Sector Ticker -_id')
     .select('firstName stock');
   res.send(users);
   console.log(users);
+});
+
+router.get('/stocks', async (req, res) => {
+  const stocks = await Stock.find()
+    .limit(100)
+    .select('Company Sector Ticker');
+  res.send(stocks);
 });
 
 router.post('/users', (req, res) => {
